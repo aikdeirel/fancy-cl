@@ -61,14 +61,10 @@
                         @endforeach
                     </ul>
                 </section>
-                @if (false)
-                    <section class="bg-white p-6 my-3">
-                        <h2 class="text-xl mb-3">{{ __('cv.headingPersonalInterests') }}</h2>
-                        @foreach ($cvData['personals'] as $userPersonal)
-                            {{ $userPersonal->description }}
-                        @endforeach
-                    </section>
-                @endif
+                <section class="bg-white p-6 my-3">
+                    <h2 class="text-xl mb-3">{{ __('cv.headingPersonalInterests') }}</h2>
+                    {{ implode(', ', $applicantPersonalInterests->pluck('interest_caption')->toArray()) }}
+                </section>
                 <section class="bg-white p-6">
                     <h2 class="text-xl mb-3">{{ date('d.m.Y') }}</h2>
                     <div class="mt-10">{{ env('APPLICANT_NAME') }}</div>
