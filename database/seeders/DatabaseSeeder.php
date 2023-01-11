@@ -9,6 +9,7 @@ use App\Models\ApplicantEducations;
 use App\Models\ApplicantSocials;
 use App\Models\ApplicantExperiences;
 use App\Models\ApplicantPersonalInterests;
+use App\Models\ApplicantSkills;
 
 class DatabaseSeeder extends Seeder
 {
@@ -19,10 +20,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        ApplicantDetails::factory(5)->create();
+        ApplicantDetails::factory(3)->create();
         ApplicantSocials::factory(2)->create();
         ApplicantExperiences::factory(3)->create();
         ApplicantEducations::factory(3)->create();
         ApplicantPersonalInterests::factory(3)->create();
+        ApplicantSkills::factory(15)->create();
     }
 }
