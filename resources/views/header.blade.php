@@ -12,7 +12,7 @@
         </div>
         <div class="flex justify-between flex-col md:flex-row">
             <div class="flex flex-col text-sm w-full md:w-5/12">
-                <ul class="flex flex-col justify-between mt-3 h-full">
+                <ul class="flex flex-col justify-evenly mt-3 h-full">
                     @foreach ($applicantDetails as $applicantDetail)
                         <li class="flex">
                             {{ $applicantDetail->detail_caption }}

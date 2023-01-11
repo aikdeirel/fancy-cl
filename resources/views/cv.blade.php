@@ -70,6 +70,48 @@
                     <div class="mt-10">{{ env('APPLICANT_NAME') }}</div>
                 </section>
             </div>
+            <div class="w-full md:w-1/3">
+                <section class="p-6">
+                    <h2 class="text-xl mb-2">{{ __('cv.contactHeading') }}</h2>
+                    <ul class="mb-5">
+                        <li class="mb-1"><strong>{{ __('cv.contactMail') }}</strong></li>
+                        <li class="mb-1">
+                            {{ env('APPLICANT_CONTACT_MAIL')  }}
+                        </li>
+                        <li class="mb-1"><strong>{{ __('cv.contactPhone') }}</strong></li>
+                        <li class="mb-1">
+                            {{ env('APPLICANT_CONTACT_PHONE')  }}
+                        </li>
+                    </ul>
+                </section>
+                <section class="p-6">
+                    <h2 class="text-xl mb-2">{{ __('cv.skillsHeading') }}</h2>
+                    <ul class="mb-5">
+                        <li class="mb-1"><strong>{{ __('cv.skillsHigh') }}</strong></li>
+                        @foreach ($applicantSkillsHigh as $skillHigh)
+                            <li class="mb-1">
+                                {{ $skillHigh->skill_name }}
+                            </li>
+                        @endforeach
+                    </ul>
+                    <ul class="mb-5">
+                        <li class="mb-1"><strong>{{ __('cv.skillsMedium') }}</strong></li>
+                        @foreach ($applicantSkillsMedium as $skillMedium)
+                            <li class="mb-1">
+                                {{ $skillMedium->skill_name }}
+                            </li>
+                        @endforeach
+                    </ul>
+                    <ul class="mb-5">
+                        <li class="mb-1"><strong>{{ __('cv.skillsLow') }}</strong></li>
+                        @foreach ($applicantSkillsLow as $skillLow)
+                            <li class="mb-1">
+                                {{ $skillLow->skill_name }}
+                            </li>
+                        @endforeach
+                    </ul>
+                </section>
+            </div>
         </div>
     </div>
 </body>
