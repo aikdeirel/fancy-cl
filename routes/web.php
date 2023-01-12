@@ -20,3 +20,4 @@ Route::get('/', function () {
 });
 
 Route::get('/cv', [JobApplicationController::class, 'cv']);
+Route::get('/cl', [JobApplicationController::class, 'cl']);

@@ -8,6 +8,7 @@ use App\Models\ApplicantDetails;
 use App\Models\ApplicantEducations;
 use App\Models\ApplicantSocials;
 use App\Models\ApplicantExperiences;
+use App\Models\ApplicantLetter;
 use App\Models\ApplicantPersonalInterests;
 use App\Models\ApplicantSkills;
 
@@ -26,5 +27,6 @@ class DatabaseSeeder extends Seeder
         ApplicantEducations::factory(3)->create();
         ApplicantPersonalInterests::factory(3)->create();
         ApplicantSkills::factory(15)->create();
+        ApplicantLetter::factory(5)->create();
     }
 }
