@@ -27,7 +27,7 @@
                         </div>
                     @endif
                 </div>
-                @foreach ($applicantLetter as $letter)
+                @foreach ($applicantLetters as $letter)
                     <section class="text-justify mb-5">
                         {!! $letter->letter_text !!}
                     </section>

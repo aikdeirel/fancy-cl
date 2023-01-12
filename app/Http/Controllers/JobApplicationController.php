@@ -6,7 +6,7 @@ use App\Models\ApplicantDetails;
 use App\Models\ApplicantSocials;
 use App\Models\ApplicantExperiences;
 use App\Models\ApplicantEducations;
-use App\Models\ApplicantLetter;
+use App\Models\ApplicantLetters;
 use App\Models\ApplicantPersonalInterests;
 use App\Models\ApplicantSkills;
 
@@ -20,7 +20,7 @@ class JobApplicationController extends Controller
   private $applicantSkillsHigh;
   private $applicantSkillsMedium;
   private $applicantSkillsLow;
-  private $applicantLetter;
+  private $applicantLetters;
 
   public function __construct()
   {
@@ -51,12 +51,12 @@ class JobApplicationController extends Controller
 
   public function cl()
   {
-    $this->applicantLetter = ApplicantLetter::get();
+    $this->applicantLetters = ApplicantLetters::get();
 
     return view('cl', [
       'applicantDetails' => $this->applicantDetails,
       'applicantSocials' => $this->applicantSocials,
-      'applicantLetter' => $this->applicantLetter,
+      'applicantLetters' => $this->applicantLetters,
     ]);
   }
 }
