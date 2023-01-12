@@ -30,6 +30,14 @@ class JobApplicationController extends Controller
     $this->applicantSocials = ApplicantSocials::get();
   }
 
+  public function index()
+  {
+    return view('index', [
+      'applicantDetails' => $this->applicantDetails,
+      'applicantSocials' => $this->applicantSocials,
+    ]);
+  }
+
   public function cv()
   {
     $this->applicantExperiences = ApplicantExperiences::get();

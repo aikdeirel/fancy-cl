@@ -15,9 +15,6 @@ use App\Http\Controllers\JobApplicationController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-
+Route::get('/', [JobApplicationController::class, 'index']);
 Route::get('/cv', [JobApplicationController::class, 'cv']);
 Route::get('/cl', [JobApplicationController::class, 'cl']);

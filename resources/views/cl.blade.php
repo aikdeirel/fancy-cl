@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ __('cv.title') }}</title>
+    <title>{{ __('cl.title') }}</title>
     @vite('resources/css/app.css')
 </head>
 
@@ -28,8 +28,8 @@
                             {{ $recipient->recipient_city ?? '' }}
                         </section>
                     </div>
-                    <div class="w-1/2">
-                        <span class="italic">{{ __('cl.dateEnd', ['date' => date('d.m.Y')]) }}</span>
+                    <div class="w-1/2 text-right">
+                        <span class="italic text-slate-600">{{ __('cl.dateEnd', ['date' => date('d.m.Y')]) }}</span>
                     </div>
                 </div>
                 <section class="text-justify mb-5">
