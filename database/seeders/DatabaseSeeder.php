@@ -11,6 +11,7 @@ use App\Models\ApplicantExperiences;
 use App\Models\ApplicantLetters;
 use App\Models\ApplicantPersonalInterests;
 use App\Models\ApplicantSkills;
+use App\Models\Recipients;
 
 class DatabaseSeeder extends Seeder
 {
@@ -28,5 +29,6 @@ class DatabaseSeeder extends Seeder
         ApplicantPersonalInterests::factory(3)->create();
         ApplicantSkills::factory(15)->create();
         ApplicantLetters::factory(5)->create();
+        Recipients::factory(3)->create();
     }
 }

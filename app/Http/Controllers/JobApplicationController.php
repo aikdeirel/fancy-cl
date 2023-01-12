@@ -9,6 +9,7 @@ use App\Models\ApplicantEducations;
 use App\Models\ApplicantLetters;
 use App\Models\ApplicantPersonalInterests;
 use App\Models\ApplicantSkills;
+use App\Models\Recipients;
 
 class JobApplicationController extends Controller
 {
@@ -21,6 +22,7 @@ class JobApplicationController extends Controller
   private $applicantSkillsMedium;
   private $applicantSkillsLow;
   private $applicantLetters;
+  private $recipient;
 
   public function __construct()
   {
@@ -52,11 +54,13 @@ class JobApplicationController extends Controller
   public function cl()
   {
     $this->applicantLetters = ApplicantLetters::get();
+    $this->recipient = Recipients::where('id', 1)->first();
 
     return view('cl', [
       'applicantDetails' => $this->applicantDetails,
       'applicantSocials' => $this->applicantSocials,
       'applicantLetters' => $this->applicantLetters,
+      'recipient' => $this->recipient,
     ]);
   }
 }

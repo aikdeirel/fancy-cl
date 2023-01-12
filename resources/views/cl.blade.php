@@ -13,20 +13,28 @@
         @include('header')
         <div class="flex flex-col md:flex-row mb-3">
             <div class="w-full mb-5 bg-white p-6">
-                <div class="flex">
-                    @if (false)
-                        <div class="w-1/2">
-                            @foreach ($recipients as $recipient)
-                                <section class="text-justify mb-3">
-                                    
-                                </section>
-                            @endforeach
-                        </div>
-                        <div class="w-1/2 text-right self-end">
-                            <span class="italic">{{ __('cl.dateEnd', ['date' => date('d.m.Y')]) }}</span>
-                        </div>
-                    @endif
+                <div class="flex place-content-between">
+                    <div class="w-1/2">
+                        <section class="text-justify">
+                            {{ $recipient->recipient_company }}
+                        </section>
+                        <section class="text-justify">
+                            {{ $recipient->recipient_name }}
+                        </section>
+                        <section class="text-justify">
+                            {{ $recipient->recipient_street }}
+                        </section>
+                        <section class="text-justify mb-3">
+                            {{ $recipient->recipient_city }}
+                        </section>
+                    </div>
+                    <div class="w-1/2">
+                        <span class="italic">{{ __('cl.dateEnd', ['date' => date('d.m.Y')]) }}</span>
+                    </div>
                 </div>
+                <section class="text-justify mb-5">
+                    {{ $recipient->recipient_salutation }}
+                </section>
                 @foreach ($applicantLetters as $letter)
                     <section class="text-justify mb-5">
                         {!! $letter->letter_text !!}
