@@ -16,12 +16,13 @@ class RecipientsFactory extends Factory
      */
     public function definition()
     {
+        $recipientName = fake()->title().' '.fake()->lastName();
         return [
             'recipient_company' => fake()->company(),
-            'recipient_name' => fake()->name(),
+            'recipient_name' => $recipientName,
             'recipient_street' => fake()->streetName().' '.fake()->numberBetween(1, 999),
             'recipient_city' => fake()->numberBetween(10000, 99999).' '.fake()->city(),
-            'recipient_salutation' => fake()->title().' '.fake()->lastName().',',
+            'recipient_salutation' => $recipientName.',',
         ];
     }
 }
