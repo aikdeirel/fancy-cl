@@ -16,16 +16,16 @@
                 <div class="flex place-content-between">
                     <div class="w-1/2">
                         <section class="text-justify">
-                            {{ $recipient->recipient_company }}
+                            {{ $recipient->recipient_company ?? '' }}
                         </section>
                         <section class="text-justify">
-                            {{ $recipient->recipient_name }}
+                            {{ $recipient->recipient_name ?? '' }}
                         </section>
                         <section class="text-justify">
-                            {{ $recipient->recipient_street }}
+                            {{ $recipient->recipient_street ?? '' }}
                         </section>
                         <section class="text-justify mb-3">
-                            {{ $recipient->recipient_city }}
+                            {{ $recipient->recipient_city ?? '' }}
                         </section>
                     </div>
                     <div class="w-1/2">
@@ -33,7 +33,7 @@
                     </div>
                 </div>
                 <section class="text-justify mb-5">
-                    {{ $recipient->recipient_salutation }}
+                    {{ $recipient->recipient_salutation ?? '' }}
                 </section>
                 @foreach ($applicantLetters as $letter)
                     <section class="text-justify mb-5">
