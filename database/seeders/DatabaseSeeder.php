@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
         ApplicantEducations::factory(3)->create();
         ApplicantPersonalInterests::factory(3)->create();
         ApplicantSkills::factory(15)->create();
-        ApplicantLetters::factory(5)->create();
         Recipients::factory(3)->create();
+        ApplicantLetters::factory(5)->create();
     }
 }

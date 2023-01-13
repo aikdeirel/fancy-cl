@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Recipients;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,7 +17,9 @@ class ApplicantLettersFactory extends Factory
      */
     public function definition()
     {
+        $recipients = Recipients::pluck('id')->toArray();
         return [
+            'recipients_id' => fake()->randomElement($recipients),
             'letter_text' => fake()->words(100, true),
         ];
     }

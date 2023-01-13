@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('applicant_letters', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('recipients_id')->constrained();
             $table->text('letter_text');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();

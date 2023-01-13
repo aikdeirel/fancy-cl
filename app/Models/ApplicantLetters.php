@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class ApplicantLetters extends Model
 {
     use HasFactory;
+
+    public function ApplicantLetters()
+    {
+        return $this->belongsTo(Recipients::class);
+    }
 }
