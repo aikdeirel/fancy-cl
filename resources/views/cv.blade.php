@@ -90,7 +90,7 @@
                         <strong class="mb-1 flex">{{ __('cv.skillsBackend') }}</strong>
                         <div class="flex flex-wrap">
                             @foreach ($applicantSkillsBackend as $skillBackend)
-                                <span class="p-1 mr-1 mb-1">
+                                <span class="pr-2 py-1">
                                     {{ $skillBackend->skill_name }}
                                 </span>
                             @endforeach
@@ -100,7 +100,7 @@
                         <strong class="mb-1 flex">{{ __('cv.skillsDatabase') }}</strong>
                         <div class="flex flex-wrap">
                             @foreach ($applicantSkillsDatabase as $skillDatabase)
-                                <span class="p-1 mr-1 mb-1">
+                                <span class="pr-2 py-1">
                                     {{ $skillDatabase->skill_name }}
                                 </span>
                             @endforeach
@@ -110,7 +110,7 @@
                         <strong class="mb-1 flex">{{ __('cv.skillsFrontend') }}</strong>
                         <div class="flex flex-wrap">
                             @foreach ($applicantSkillsFrontend as $skillFrontend)
-                                <span class="p-1 mr-1 mb-1">
+                                <span class="pr-2 py-1">
                                     {{ $skillFrontend->skill_name }}
                                 </span>
                             @endforeach
@@ -120,7 +120,7 @@
                         <strong class="mb-1 flex">{{ __('cv.skillsBasic') }}</strong>
                         <div class="flex flex-wrap">
                             @foreach ($applicantSkillsBasic as $skillBasic)
-                                <span class="p-1 mr-1 mb-1">
+                                <span class="pr-2 py-1">
                                     {{ $skillBasic->skill_name }}
                                 </span>
                             @endforeach
@@ -130,7 +130,7 @@
                         <strong class="mb-1 flex">{{ __('cv.skillsMisc') }}</strong>
                         <div class="flex flex-wrap">
                             @foreach ($applicantSkillsMisc as $skillMisc)
-                                <span class="p-1 mr-1 mb-1">
+                                <span class="pr-2 py-1">
                                     {{ $skillMisc->skill_name }}
                                 </span>
                             @endforeach
