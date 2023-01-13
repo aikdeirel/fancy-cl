@@ -18,9 +18,11 @@ class JobApplicationController extends Controller
   private $applicantExperiences;
   private $applicantEducations;
   private $applicantPersonalInterests;
-  private $applicantSkillsHigh;
-  private $applicantSkillsMedium;
-  private $applicantSkillsLow;
+  private $applicantSkillsBackend;
+  private $applicantSkillsDatabase;
+  private $applicantSkillsFrontend;
+  private $applicantSkillsBasic;
+  private $applicantSkillsMisc;
   private $applicantLetters;
   private $recipient;
 
@@ -43,9 +45,11 @@ class JobApplicationController extends Controller
     $this->applicantExperiences = ApplicantExperiences::get();
     $this->applicantEducations = ApplicantEducations::get();
     $this->applicantPersonalInterests = ApplicantPersonalInterests::get();
-    $this->applicantSkillsHigh = ApplicantSkills::where('skill_level', 'high')->get();
-    $this->applicantSkillsMedium = ApplicantSkills::where('skill_level', 'medium')->get();
-    $this->applicantSkillsLow = ApplicantSkills::where('skill_level', 'low')->get();
+    $this->applicantSkillsBackend = ApplicantSkills::where('skill_category', 'backend')->orderBy('skill_order')->get();
+    $this->applicantSkillsDatabase = ApplicantSkills::where('skill_category', 'database')->orderBy('skill_order')->get();
+    $this->applicantSkillsFrontend = ApplicantSkills::where('skill_category', 'frontend')->orderBy('skill_order')->get();
+    $this->applicantSkillsBasic = ApplicantSkills::where('skill_category', 'basic')->orderBy('skill_order')->get();
+    $this->applicantSkillsMisc = ApplicantSkills::where('skill_category', 'misc')->orderBy('skill_order')->get();
 
     return view('cv', [
       'applicantDetails' => $this->applicantDetails,
@@ -53,16 +57,19 @@ class JobApplicationController extends Controller
       'applicantExperiences' => $this->applicantExperiences,
       'applicantEducations' => $this->applicantEducations,
       'applicantPersonalInterests' => $this->applicantPersonalInterests,
-      'applicantSkillsHigh' => $this->applicantSkillsHigh,
-      'applicantSkillsMedium' => $this->applicantSkillsMedium,
-      'applicantSkillsLow' => $this->applicantSkillsLow,
+      'applicantSkillsBackend' => $this->applicantSkillsBackend,
+      'applicantSkillsDatabase' => $this->applicantSkillsDatabase,
+      'applicantSkillsFrontend' => $this->applicantSkillsFrontend,
+      'applicantSkillsBasic' => $this->applicantSkillsBasic,
+      'applicantSkillsMisc' => $this->applicantSkillsMisc,
     ]);
   }
 
   public function cl()
   {
-    $this->applicantLetters = ApplicantLetters::get();
-    $this->recipient = Recipients::where('id', 1)->first();
+    $recipientId = env('RECIPIENT_ID');
+    $this->applicantLetters = ApplicantLetters::where('recipients_id', $recipientId)->get();
+    $this->recipient = Recipients::where('id', $recipientId)->first();
 
     return view('cl', [
       'applicantDetails' => $this->applicantDetails,

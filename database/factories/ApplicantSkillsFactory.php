@@ -18,7 +18,8 @@ class ApplicantSkillsFactory extends Factory
     {
         return [
             'skill_name' => fake()->word(),
-            'skill_level' => fake()->randomElement(['high','medium','low']),
+            'skill_category' => fake()->randomElement(['backend', 'database', 'frontend', 'basic', 'misc']),
+            'skill_order' => fake()->randomDigitNotZero(),
         ];
     }
 }

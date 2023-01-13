@@ -13,11 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('applicant_skills', function (Blueprint $table) {
+        Schema::create('recipients', function (Blueprint $table) {
             $table->id();
-            $table->text('skill_name');
-            $table->enum('skill_category', ['backend', 'database', 'frontend', 'basic', 'misc']);
-            $table->integer('skill_order');
+            $table->text('recipient_company');
+            $table->text('recipient_name');
+            $table->text('recipient_street');
+            $table->text('recipient_city');
+            $table->text('recipient_salutation');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });

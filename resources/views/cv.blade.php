@@ -76,40 +76,66 @@
                     <ul class="mb-5">
                         <li class="mb-1"><strong>{{ __('cv.contactMail') }}</strong></li>
                         <li class="mb-1">
-                            {{ env('APPLICANT_CONTACT_MAIL')  }}
+                            {{ env('APPLICANT_CONTACT_MAIL') }}
                         </li>
                         <li class="mb-1"><strong>{{ __('cv.contactPhone') }}</strong></li>
                         <li class="mb-1">
-                            {{ env('APPLICANT_CONTACT_PHONE')  }}
+                            {{ env('APPLICANT_CONTACT_PHONE') }}
                         </li>
                     </ul>
                 </section>
-                <section class="p-6">
+                <section class="px-6">
                     <h2 class="text-xl mb-2">{{ __('cv.skillsHeading') }}</h2>
-                    <ul class="mb-5">
-                        <li class="mb-1"><strong>{{ __('cv.skillsHigh') }}</strong></li>
-                        @foreach ($applicantSkillsHigh as $skillHigh)
-                            <li class="mb-1">
-                                {{ $skillHigh->skill_name }}
-                            </li>
-                        @endforeach
-                    </ul>
-                    <ul class="mb-5">
-                        <li class="mb-1"><strong>{{ __('cv.skillsMedium') }}</strong></li>
-                        @foreach ($applicantSkillsMedium as $skillMedium)
-                            <li class="mb-1">
-                                {{ $skillMedium->skill_name }}
-                            </li>
-                        @endforeach
-                    </ul>
-                    <ul class="mb-5">
-                        <li class="mb-1"><strong>{{ __('cv.skillsLow') }}</strong></li>
-                        @foreach ($applicantSkillsLow as $skillLow)
-                            <li class="mb-1">
-                                {{ $skillLow->skill_name }}
-                            </li>
-                        @endforeach
-                    </ul>
+                    <div class="mb-5">
+                        <strong class="mb-1 flex">{{ __('cv.skillsBackend') }}</strong>
+                        <div class="flex flex-wrap">
+                            @foreach ($applicantSkillsBackend as $skillBackend)
+                                <span class="p-1 mr-1 mb-1">
+                                    {{ $skillBackend->skill_name }}
+                                </span>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="mb-5">
+                        <strong class="mb-1 flex">{{ __('cv.skillsDatabase') }}</strong>
+                        <div class="flex flex-wrap">
+                            @foreach ($applicantSkillsDatabase as $skillDatabase)
+                                <span class="p-1 mr-1 mb-1">
+                                    {{ $skillDatabase->skill_name }}
+                                </span>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="mb-5">
+                        <strong class="mb-1 flex">{{ __('cv.skillsFrontend') }}</strong>
+                        <div class="flex flex-wrap">
+                            @foreach ($applicantSkillsFrontend as $skillFrontend)
+                                <span class="p-1 mr-1 mb-1">
+                                    {{ $skillFrontend->skill_name }}
+                                </span>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="mb-5">
+                        <strong class="mb-1 flex">{{ __('cv.skillsBasic') }}</strong>
+                        <div class="flex flex-wrap">
+                            @foreach ($applicantSkillsBasic as $skillBasic)
+                                <span class="p-1 mr-1 mb-1">
+                                    {{ $skillBasic->skill_name }}
+                                </span>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="mb-5">
+                        <strong class="mb-1 flex">{{ __('cv.skillsMisc') }}</strong>
+                        <div class="flex flex-wrap">
+                            @foreach ($applicantSkillsMisc as $skillMisc)
+                                <span class="p-1 mr-1 mb-1">
+                                    {{ $skillMisc->skill_name }}
+                                </span>
+                            @endforeach
+                        </div>
+                    </div>
                 </section>
             </div>
         </div>
