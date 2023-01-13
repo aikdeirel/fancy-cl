@@ -9,7 +9,7 @@
 </head>
 
 <body class="antialiased bg-gray-300">
-    <div class="container p-3 print:mt-3">
+    <div class="container p-3 print:mt-4 mx-auto">
         @include('header')
         <div class="flex flex-col md:flex-row mb-3">
             <div class="w-full mb-5 bg-white p-6">

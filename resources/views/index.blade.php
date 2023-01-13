@@ -9,7 +9,7 @@
 </head>
 
 <body class="antialiased bg-gray-300">
-    <div class="container p-3 print:mt-3">
+    <div class="container p-3 print:mt-4 mx-auto">
         @include('header')
         <div class="flex flex-col md:flex-row mb-3">
             <a href="/cv" class="w-full md:w-1/2 md:mr-3 hover:text-white hover:bg-cyan-900 transition duration-300 bg-white mb-3">
