@@ -14,7 +14,7 @@
         <div class="flex flex-col md:flex-row mb-3">
             <div class="w-full mb-5 bg-white p-6">
                 <div class="flex place-content-between">
-                    <div class="w-1/2">
+                    <div class="w-1/2 leading-tight">
                         <section class="text-justify">
                             {{ $recipient->recipient_company ?? '' }}
                         </section>
@@ -32,14 +32,20 @@
                         <span class="italic text-slate-600">{{ __('cl.dateEnd', ['date' => date('d.m.Y')]) }}</span>
                     </div>
                 </div>
-                <section class="text-justify mb-5">
+                <section class="text-justify mb-5 leading-tight">
                     {{ $recipient->recipient_salutation ?? '' }}
                 </section>
                 @foreach ($applicantLetters as $letter)
-                    <section class="text-justify mb-5">
+                    <section class="text-justify mb-5 leading-tight">
                         {!! $letter->letter_text !!}
                     </section>
                 @endforeach
+                <section class="text-justify mb-5 leading-tight">
+                    {{ __('cl.closing') }}
+                </section>
+                <section class="text-justify mb-2 leading-tight">
+                    {{ env('APPLICANT_NAME') }}
+                </section>
             </div>
         </div>
     </div>

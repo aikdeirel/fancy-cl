@@ -12,12 +12,12 @@
     <div class="container p-3 print:mt-4 mx-auto">
         @include('header')
         <div class="flex flex-col md:flex-row mb-3">
-            <div class="w-full md:w-2/3 md:mr-3 mb-3 md:mb-0">
+            <div class="w-full md:w-2/3 md:mr-3">
                 <section class="bg-white p-6 mb-3">
                     <h2 class="text-xl mb-2">{{ __('cv.headingExperience') }}</h2>
                     <ul>
                         @foreach ($applicantExperiences as $applicantExperience)
-                            <li class="mb-3">
+                            <li class="mb-5 last:mb-0">
                                 <div>
                                     <div class="flex place-content-between">
                                         <h3>
@@ -28,10 +28,10 @@
                                             {{ $applicantExperience->experience_to->format('Y.m') }}
                                         </span>
                                     </div>
-                                    <div class="italic mb-1">
+                                    <div class="italic">
                                         {{ $applicantExperience->experience_title }}
                                     </div>
-                                    <div class="text-justify">
+                                    <div class="text-justify leading-tight">
                                         {{ $applicantExperience->experience_description }}
                                     </div>
                                 </div>
@@ -44,7 +44,7 @@
                     <h2 class="text-xl mb-3">{{ __('cv.headingEducation') }}</h2>
                     <ul>
                         @foreach ($applicantEducations as $applicantEducation)
-                            <li class="mb-3">
+                            <li class="mb-5 last:mb-0">
                                 <div class="flex place-content-between">
                                     <h3>
                                         <strong>{{ $applicantEducation->education_title }}</strong>
@@ -61,13 +61,9 @@
                         @endforeach
                     </ul>
                 </section>
-                <section class="bg-white p-6 my-3">
-                    <h2 class="text-xl mb-3">{{ __('cv.headingPersonalInterests') }}</h2>
-                    {{ implode(', ', $applicantPersonalInterests->pluck('interest_caption')->toArray()) }}
-                </section>
                 <section class="bg-white p-6">
-                    <h2 class="text-xl mb-3">{{ date('d.m.Y') }}</h2>
-                    <div class="mt-10">{{ env('APPLICANT_NAME') }}</div>
+                    <h2 class="mb-3">{{ __('cl.dateEnd', ['date' => date('d.m.Y')]) }}</h2>
+                    <div>{{ env('APPLICANT_NAME') }}</div>
                 </section>
             </div>
             <div class="w-full md:w-1/3">
