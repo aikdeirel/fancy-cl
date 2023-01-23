@@ -20,7 +20,7 @@
                     @endforeach
                 </ul>
             </div>
-            <div class="flex flex-col text-sm w-full md:w-7/12">
+            <div class="flex flex-col text-sm w-full md:w-7/12 self-end md:items-end items-start">
                 @foreach ($applicantSocials as $applicantSocial)
                     <div class="flex mt-3">
                         <div style="background-image: url({{ $applicantSocial->social_icon }})"
