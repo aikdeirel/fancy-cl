@@ -1,7 +1,7 @@
 <header class="flex flex-col md:flex-row bg-gradient-to-r from-cyan-900 to-blue-900 p-6 text-white mb-3">
     <div class="flex self-center">
         <div style="background-image: url({{ env('APPLICANT_PHOTO') }})"
-            class="h-32 w-32 rounded-full saturate-50 bg-cover bg-center mb-6 md:mb-0 md:mr-6"></div>
+            class="h-32 w-32 rounded-full bg-cover bg-center mb-6 md:mb-0 md:mr-6"></div>
     </div>
     <div class="flex flex-col w-full md:w-10/12">
         <div class="flex w-full">
@@ -27,7 +27,7 @@
                             class="h-8 w-8 mr-3 bg-contain self-center bg-no-repeat"></div>
                         <div class="flex flex-col">
                             <div>{{ $applicantSocial->social_name }}</div>
-                            <div>{{ $applicantSocial->social_link }}</div>
+                            <div><a href="{{ $applicantSocial->social_link }}">{{ $applicantSocial->social_link }}</a></div>
                         </div>
                     </div>
                 @endforeach
