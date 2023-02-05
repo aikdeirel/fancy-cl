@@ -1,15 +1,5 @@
 # fancy cover letter
 
-## copy the repo
-```
-git@github.com:aikdeirel/fancy-cl.git
-```
-
-## go to project folder
-```
-cd fancy-cl
-```
-
 ## init environment vars
 ```
 cp .env.example .env
