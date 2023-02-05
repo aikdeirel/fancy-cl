@@ -13,7 +13,7 @@
         @include('header')
         <div class="flex flex-col md:flex-row mb-3">
             <div class="w-full mb-5 bg-white p-6">
-                <div class="flex place-content-between">
+                <div class="flex place-content-between mb-5">
                     <div class="w-1/2 leading-tight">
                         <section class="text-justify">
                             {{ $recipient->recipient_company ?? '' }}
@@ -40,11 +40,12 @@
                         {!! $letter->letter_text !!}
                     </section>
                 @endforeach
-                <section class="text-justify mb-5 leading-tight">
+                <section class="text-justify mb-5 mt-16 leading-tight">
                     {{ __('cl.closing') }}
                 </section>
-                <section class="text-justify mb-2 leading-tight">
-                    {{ env('APPLICANT_NAME') }}
+                <section class="text-justify leading-tight">
+                    <div style="background-image: url({{ env('APPLICANT_SIGNATURE') }})"
+                        class="h-16 bg-left bg-no-repeat bg-contain"></div>
                 </section>
             </div>
         </div>

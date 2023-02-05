@@ -62,8 +62,9 @@
                     </ul>
                 </section>
                 <section class="bg-white p-6">
-                    <h2 class="mb-3">{{ __('cl.dateEnd', ['date' => date('d.m.Y')]) }}</h2>
-                    <div>{{ env('APPLICANT_NAME') }}</div>
+                    <h2>{{ __('cl.dateEnd', ['date' => date('d.m.Y')]) }}</h2>
+                    <div style="background-image: url({{ env('APPLICANT_SIGNATURE') }})"
+                        class="h-12 w-30 bg-left bg-no-repeat bg-contain"></div>
                 </section>
             </div>
             <div class="w-full md:w-1/3">
