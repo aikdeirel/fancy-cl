@@ -42,8 +42,8 @@ class JobApplicationController extends Controller
 
   public function cv()
   {
-    $this->applicantExperiences = ApplicantExperiences::get();
-    $this->applicantEducations = ApplicantEducations::get();
+    $this->applicantExperiences = ApplicantExperiences::orderBy('experience_from', 'desc')->get();
+    $this->applicantEducations = ApplicantEducations::orderBy('education_from', 'desc')->get();
     $this->applicantPersonalInterests = ApplicantPersonalInterests::get();
     $this->applicantSkillsBackend = ApplicantSkills::where('skill_category', 'backend')->orderBy('skill_order')->get();
     $this->applicantSkillsDatabase = ApplicantSkills::where('skill_category', 'database')->orderBy('skill_order')->get();
