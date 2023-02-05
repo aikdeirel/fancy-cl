@@ -22,8 +22,14 @@ npm install
 php artisan migrate:fresh
 php artisan db:seed
 ```
+
+## create encryption key
+```
+php artisan key:generate
+```
+
 ## run the application
 ```
 php artisan serve
-npm run watch
+npm run dev
 ```
