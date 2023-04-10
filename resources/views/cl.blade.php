@@ -40,7 +40,7 @@
                         {!! $letter->letter_text !!}
                     </section>
                 @endforeach
-                <section class="text-justify mb-5 mt-16 leading-tight">
+                <section class="text-justify mb-4 mt-9 leading-tight">
                     {{ __('cl.closing') }}
                 </section>
                 <section class="text-justify leading-tight">

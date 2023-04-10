@@ -8,6 +8,7 @@ return [
   'contactHeading' => 'Kontakt',
   'contactMail' => 'E-Mail',
   'contactPhone' => 'Telefon',
+  'today' => 'Heute',
   'skillsHeading' => 'Kenntnisse',
   'skillsBackend' => 'Backend',
   'skillsDatabase' => 'Datenbanken',

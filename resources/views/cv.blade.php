@@ -25,7 +25,11 @@
                                         </h3>
                                         <span class="text-slate-600">
                                             {{ $applicantExperience->experience_from->format('Y.m') }} -
-                                            {{ $applicantExperience->experience_to->format('Y.m') }}
+                                            @if($applicantExperience->id === count($applicantExperiences))
+                                                {{ __('cv.today') }}
+                                            @else
+                                                {{ $applicantExperience->experience_to->format('Y.m') }}
+                                            @endif
                                         </span>
                                     </div>
                                     <div class="italic">
